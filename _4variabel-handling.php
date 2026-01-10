@@ -1,13 +1,13 @@
 <?php
 
 // ISSET
-// $nama = null;
+$nama = "Bejo";
 
-// if(isset($nama)) {
-//     echo "Variabel nya hadirrr";
-// } else {
-//     echo "Variabel nya hilang, gatau kemana";
-// }
+if(isset($nama)) {
+    echo "Variabel nya hadirrr";
+} else {
+    echo "Variabel nya hilang, gatau kemana";
+}
 
 // EMPTY
 $saldo = 10000;
