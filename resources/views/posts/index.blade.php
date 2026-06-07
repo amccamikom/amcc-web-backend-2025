@@ -22,15 +22,15 @@
         <p>Belum ada catatan nih. Ayo bikin data baru</p>
     @else
         <ul>
-            <!-- <div style="margin-top: 30px; display: flex;">
+             <div style="margin-top: 30px; display: flex;">
                 {{ $posts->links() }}
-            </div> -->
+            </div>
             @foreach($posts as $post)
                 <li style="margin-bottom: 15px;">
                     <h3>{{ $post->title }}</h3>
                     <p>{{ $post->content }}</p>
                     <small>
-                        <!-- Ditulis oleh: <strong>{{ $post->user->name }}</strong><br> -->
+                        Ditulis oleh: <strong>{{ $post->user->name }}</strong><br>
                         Dibuat pada: {{ $post->created_at->format('d M Y') }}
                     </small>
                 </li>

@@ -5,7 +5,6 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
-use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,10 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-    User::create([
-            'name' => 'Gibrunn',
-            'email' => 'gibrun@example.com',
-            'password' => bcrypt('password'),
-        ]);
+        User::factory(100)->hasPost(100)->create();
     }
 }
