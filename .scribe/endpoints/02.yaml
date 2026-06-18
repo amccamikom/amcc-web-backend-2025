@@ -1,0 +1,398 @@
+name: Notes
+description: |-
+
+  APIs untuk mengelola notes
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/notes
+    metadata:
+      custom: []
+      groupName: Notes
+      groupDescription: |-
+
+        APIs untuk mengelola notes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Daftar semua notes'
+      description: 'Mengembalikan daftar semua notes yang ada di database.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "data": [
+              {
+                "id": 1,
+                "title": "Judul Note",
+                "content": "Isi content note",
+                "user_id": 1,
+                "created_at": "2026-06-06T00:00:00.000000Z",
+                "updated_at": "2026-06-06T00:00:00.000000Z"
+              }
+            ]
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/notes/{note_id}'
+    metadata:
+      custom: []
+      groupName: Notes
+      groupDescription: |-
+
+        APIs untuk mengelola notes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Tampilkan note tertentu'
+      description: 'Menampilkan detail note berdasarkan ID.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      note_id:
+        custom: []
+        name: note_id
+        description: 'The ID of the note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      note:
+        custom: []
+        name: note
+        description: 'ID dari note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      note_id: 1
+      note: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "data": {
+              "id": 1,
+              "title": "Judul Note",
+              "content": "Isi content note",
+              "user_id": 1,
+              "created_at": "2026-06-06T00:00:00.000000Z",
+              "updated_at": "2026-06-06T00:00:00.000000Z"
+            }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+            "message": "Note tidak ditemukan"
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/notes
+    metadata:
+      custom: []
+      groupName: Notes
+      groupDescription: |-
+
+        APIs untuk mengelola notes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Membuat note baru'
+      description: 'Membuat note baru dengan data yang diberikan.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        custom: []
+        name: title
+        description: 'Judul note.'
+        required: true
+        example: '"Judul Note Pertama"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      content:
+        custom: []
+        name: content
+        description: 'Isi content.'
+        required: true
+        example: '"Ini adalah content note pertama"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      title: '"Judul Note Pertama"'
+      content: '"Ini adalah content note pertama"'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: |-
+          {
+            "data": {
+              "id": 1,
+              "title": "Judul Note Pertama",
+              "content": "Ini adalah content note pertama",
+              "user_id": 1,
+              "created_at": "2026-06-06T00:00:00.000000Z",
+              "updated_at": "2026-06-06T00:00:00.000000Z"
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/notes/{note_id}'
+    metadata:
+      custom: []
+      groupName: Notes
+      groupDescription: |-
+
+        APIs untuk mengelola notes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update note'
+      description: 'Mengupdate data note yang sudah ada.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      note_id:
+        custom: []
+        name: note_id
+        description: 'The ID of the note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      note:
+        custom: []
+        name: note
+        description: 'ID dari note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      note_id: 1
+      note: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        custom: []
+        name: title
+        description: 'Judul note.'
+        required: true
+        example: '"Judul Note Update"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      content:
+        custom: []
+        name: content
+        description: 'Isi content.'
+        required: true
+        example: '"Ini adalah content note yang sudah diupdate"'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      title: '"Judul Note Update"'
+      content: '"Ini adalah content note yang sudah diupdate"'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "data": {
+              "id": 1,
+              "title": "Judul Note Update",
+              "content": "Ini adalah content note yang sudah diupdate",
+              "user_id": 1,
+              "created_at": "2026-06-06T00:00:00.000000Z",
+              "updated_at": "2026-06-13T00:00:00.000000Z"
+            }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+            "message": "Forbidden. You do not own this note."
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/notes/{note_id}'
+    metadata:
+      custom: []
+      groupName: Notes
+      groupDescription: |-
+
+        APIs untuk mengelola notes
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Hapus note'
+      description: 'Menghapus note dari database.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      note_id:
+        custom: []
+        name: note_id
+        description: 'The ID of the note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      note:
+        custom: []
+        name: note
+        description: 'ID dari note.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      note_id: 1
+      note: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 204
+        content: '{}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 403
+        content: |-
+          {
+            "message": "Forbidden. You do not own this note."
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+            "message": "Note tidak ditemukan"
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
