@@ -1,0 +1,16 @@
+{
+  "name": "amcc-docker-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Starter project praktikum Docker AMCC: Machine Health Monitor",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "start:backend": "npm --prefix backend run start",
+    "build": "npm --prefix frontend run build",
+    "check": "npm --prefix frontend run check && npm --prefix backend run check"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
